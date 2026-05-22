@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+
+[CustomEditor(typeof(MapGenerator))]
+public class MapGeneratorEditor : Editor
+{
+    //Editor 是 Unity 提供的一个特殊基类，专门用来自定义 Inspector 面板的外观和行为
+    public override void OnInspectorGUI()
+    {
+        MapGenerator mapGen = (MapGenerator)target;//拿到当前的MapGenerator
+        
+        //DrawDefaultInspector();先画出默认的Inspector（原本unity 会根据 MapGenerator 生成的UI）
+        if (DrawDefaultInspector())// 画出所有字段，并检测是否被修改了
+        {
+            if (mapGen.autoUpdate)// 如果开启了自动更新
+            {
+                mapGen.GenerateMap();//调整数值后就立刻重新生成地图
+            }
+        }
+        //unity自带的ui机制，只有更改数值时才会刷新UI，原本是节省性能的机制
+        //Unity 的 Inspector 是按需重绘的（鼠标交互、值变化等才触发），而 DrawDefaultInspector() 只在字段值真的变了时返回 true，这是 Unity 为了节省性能设计的机制。
+        
+        
+        //再加一个按钮
+        if (GUILayout.Button("Generator"))
+        {
+            mapGen.GenerateMap();//点击时调用方法
+        }
+    }
+}
