@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4467e6d069222924b8d389849abefe5a, type: 3}
+  m_Name: PrototypeConfig
+  m_EditorClassIdentifier: 
+  player:
+    maxStamina: 100
+    climbCostPerMeter: 5
+    jumpCost: 12
+    hangCostPerSecond: 1
+    recoveryPerSecond: 25
+  totalAltitude: 180
+  spiral:
+    turns: 4
+    radiusFrac: 0.28
+    radiusNoiseAmp: 0.45
+    radiusNoiseFreq: 1.8
+    angleNoiseAmp: 0.35
+    localJitterFrac: 0.06
+    summitTaper: 0.55
+  edgeTypeRules:
+  - type: 0
+    costMultiplier: 0
+    flatCost: 0
+    chargeHorizontal: 0
+  - type: 1
+    costMultiplier: 1
+    flatCost: 0
+    chargeHorizontal: 0
+  - type: 2
+    costMultiplier: 1.6
+    flatCost: 0
+    chargeHorizontal: 0
+  - type: 3
+    costMultiplier: 0
+    flatCost: 12
+    chargeHorizontal: 0
+  - type: 4
+    costMultiplier: 0.5
+    flatCost: 0
+    chargeHorizontal: 0
+  - type: 5
+    costMultiplier: 1
+    flatCost: 0
+    chargeHorizontal: 1
+  - type: 6
+    costMultiplier: 0
+    flatCost: 12
+    chargeHorizontal: 0
+  biomes:
+  - biomeName: "\u6D77\u5CB8"
+    altitudeMin: 0
+    altitudeMax: 0.4
+    restSpacingMin: 0.3
+    restSpacingMax: 0.45
+    branchCountRange: {x: 2, y: 3}
+    midBiomeCampfire: 0
+    edgeTypePool:
+    - type: 1
+      weight: 4
+    - type: 4
+      weight: 1
+    signatureThreat: "\u65E0\uFF08\u6559\u5B66\u533A\uFF09"
+  - biomeName: "\u4E1B\u6797"
+    altitudeMin: 0.4
+    altitudeMax: 1
+    restSpacingMin: 0.4
+    restSpacingMax: 0.6
+    branchCountRange: {x: 2, y: 4}
+    midBiomeCampfire: 1
+    edgeTypePool:
+    - type: 1
+      weight: 3
+    - type: 4
+      weight: 2
+    - type: 5
+      weight: 1
+    - type: 2
+      weight: 0.5
+    signatureThreat: "\u6BD2\u7269\u3001\u6E7F\u6ED1"
+  topology:
+    mainPathMaxEdgeCost: 0.85
+    autoScaleByAltitude: 1
+    costPerHundredMeters: 5.2
+    edgesPerHundredMeters: 14
+    autoTolerance: 0.25
+    totalCostRange: {x: 7, y: 14}
+    mainPathEdgeCountRange: {x: 13, y: 28}
+    shortcutCostRange: {x: 0.8, y: 0.95}
+    detourMaxEdgeCost: 0.4
+    lootSpurDepthRange: {x: 1, y: 2}
+    lootSpurPerSegment: 1

@@ -1,0 +1,44 @@
+# ################
+# 1. Unity 自动生成的文件夹（绝对不要提交）
+# ################
+[Ll]ibrary/
+[Ll]og/
+[Ll]ocalCache/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+
+# ################
+# 2. Unity 特定文件
+# ################
+*.unityproj
+*.pidb
+*.booproj
+*.svd
+*.user
+*.userprefs
+*.lock.json
+*.csproj
+*.unitypackage
+
+# ################
+# 3. IDE 生成的文件（Rider, VS, VS Code）
+# ################
+.idea/
+.vs/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ################
+# 4. 各类临时文件及系统文件
+# ################
+.DS_Store
+.Thumbs.db
+.external/
+*.orig
+*.meta
